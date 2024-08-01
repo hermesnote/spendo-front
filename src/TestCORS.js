@@ -2,8 +2,11 @@
 import React, { useEffect } from 'react';
 
 const TestCORS = () => {
+
+    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/data`;
+
     useEffect(() => {
-        fetch('http://localhost:8080/api/data')
+        fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -12,7 +15,7 @@ const TestCORS = () => {
             })
             .then(data => console.log(data))
             .catch(error => console.error('There was a problem with your fetch operation:', error));
-    }, []);
+    }, [apiUrl]);
 
     return (
         <div>
