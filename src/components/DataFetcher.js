@@ -19,7 +19,7 @@ function DataFetcher() {
             return response.json();
         })
         .then(data => {
-            console.error('Receive data:', data);
+            console.log('Receive data:', data);
             setData(data);
         })
         .catch(error => {
